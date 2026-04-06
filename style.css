@@ -1,0 +1,186 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, 'Inter', sans-serif,;
+    box-sizing: border-box;
+}
+
+/* 🌈 Dual Background with Local Image + Animated Gradient */
+.stApp {
+    background:
+        linear-gradient(120deg, rgba(0,255,204,0.25) 0%, rgba(0,120,255,.35) 50%, rgba(255,0,200,0.25) 100%);
+        /* url("https://wallpaperswide.com/download/green_wheat_field_rain_clouds_sky-wallpaper-2160x1440.jpg"); */
+    background-image: url("https://wallpaperswide.com/download/green_wheat_field_rain_clouds_sky-wallpaper-2160x1440.jpg");
+    /* background-image: url("nature.jpg");  */
+    background-size: cover, cover;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-position: 0% 50%, center center;
+    background-attachment: fixed, fixed;
+    background-blend-mode: overlay, soft-light;
+    /* animation: gradientShift 18s ease infinite, fadeInBody 1.2s ease forwards; */
+    transition: all 0.5s ease;
+    min-height: 100vh;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%, center center; }
+    50% { background-position: 100% 50%, center center;
+     }
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+/* 🪞 Transparent main section */
+.main {
+    background: transparent !important;
+}
+
+/* 🌟 Header Container */
+.header-container {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    padding: 3.5rem 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 0 30px rgba(38, 255, 0, 0.7),inset 0 0 30px rgba(255, 255, 0, 1.0);
+    animation: fadeInDown 0.8s ease-out;
+    position: relative;
+}
+
+.header-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    background: linear-gradient(45deg, rgba(5, 238, 63, 0.5), rgba(49, 52, 243, 0.5));
+    z-index: -1;
+    filter: blur(40px);
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✨ Title and Subtitle */
+.main-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgb(200, 0, 150);
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 20%, #00ffea 80%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    text-shadow: 0 2px 30px rgba(0, 235, 4);
+}
+
+.subtitle {
+    text-align: center;
+    /* color: #f2f2f2; */
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgb(245, 244, 246);
+    text-shadow: 0 2px 30px rgb(26, 223, 233);
+}
+
+/* 🧩 Input Section */
+.input-section {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 28px;
+    padding: 2.8rem;
+    margin-bottom: 2rem;
+    color :#0b0b0b;
+    box-shadow: 0 15px 40px rgba(245, 5, 5, 0.2);
+    backdrop-filter: blur(35px);
+    animation: fadeInUp 0.8s ease-out;
+
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌾 Inputs and Buttons */
+.stSelectbox > div > div,
+.stNumberInput > div > div > input {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 14px !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+    color: #fdfdfd !important;
+    font-weight: 700 !important;
+    font-weight: 300;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    transition: all 0.3s ease !important;
+}
+
+.stSelectbox > div > div:hover,
+.stNumberInput > div > div > input:hover {
+    box-shadow: 0 0 25px rgba(28, 237, 237, 0.7);
+    transform: scale(1.0);
+
+}
+
+.stButton > button {
+    background: linear-gradient(135deg, #27a4e8 20%, #221be6 100%) !important;
+    color: white !important;
+    border: 1px solid white !important;
+    padding: 1.2rem 3rem !important;
+    border-radius: 20px !important;
+    font-weight: 800 !important;
+    font-size: 2rem !important;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    transition: all 0.4s ease-in-out !important;
+    width: 100% !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-5px) scale(1.0);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6) inset;
+}
+
+/* 🎇 Prediction Cards */
+.prediction-card {
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 28px;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 25px;
+    margin: 1rem 0;
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.4);
+    animation: cardPop 0.6s ease-out;
+    backdrop-filter: blur(40px);
+    transition: all 0.4s ease;
+}
+
+@keyframes cardPop {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.prediction-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.7);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .main-title { font-size: 2.6rem !important; }
+    .subtitle { font-size: 1.1rem !important; }
+    .card-value { font-size: 2.2rem; }
+    .input-section { padding: 1.8rem; }
+}
